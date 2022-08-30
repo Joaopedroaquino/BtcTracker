@@ -16,7 +16,7 @@ class BalanceCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'Balance',
+            'BTC agora',
             style: TextStyle(fontSize: 18),
           ),
           const SizedBox(height: 4),
@@ -29,12 +29,12 @@ class BalanceCard extends StatelessWidget {
           ),
           const Spacer(),
           const Text(
-            'Profit Today',
+            'Hoje',
             style: TextStyle(fontSize: 18),
           ),
           const SizedBox(height: 4),
           const Text(
-            '\$201.12',
+            'R\$201.12',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -63,7 +63,7 @@ class BalanceCard extends StatelessWidget {
               size: 16,
             ),
             SizedBox(width: 2),
-            Text('+5.2%'),
+            Text('+1.5%'),
           ],
         ),
       ),
