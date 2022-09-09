@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
                     color: kSecondaryTextColor,
                   ),
                 ),
-                const SizedBox(height: 5),
+                const SizedBox(height: 20),
                 Row(
                   children: const [
                     CircleAvatar(
@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                       backgroundColor: kBackgroundColor,
                       radius: 30,
                     ),
-                    SizedBox(width: 10),
+                    SizedBox(width: 15),
                     Text(
                       'Joao Pedro',
                       style: TextStyle(

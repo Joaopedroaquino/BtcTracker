@@ -7,7 +7,6 @@ import '../../../../components/chart.dart';
 import '../../../../components/custom_icon.dart';
 import '../../../../components/models/currency.dart';
 import '../../../../utils/constants.dart';
-import '../../../currency_details_screen/currency_details_screen.dart';
 import '../currency_title.dart';
 
 class PortfolioItem extends StatelessWidget {
@@ -99,16 +98,7 @@ class PortfolioItem extends StatelessWidget {
               bottom: 20,
               child: currentAmount(),
             ),
-            Material(
-              color: Colors.transparent,
-              child: InkWell(
-                onTap: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => CurrencyDetailsScreen(currency: currency),
-                  ),
-                ),
-              ),
-            ),
+          
           ],
         ),
       ),
