@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../utils/constants.dart';
 import 'components/balance_card/balance_card.dart';
-import 'components/favorites/favorites.dart';
 import 'components/portfolio/portfolio.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -52,42 +50,6 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-
-  // Widget bottomNavigationBar() {
-  //   return Container(
-  //     decoration: BoxDecoration(
-  //       gradient: LinearGradient(
-  //         begin: Alignment.topCenter,
-  //         end: const Alignment(0, -0.1),
-  //         colors: [
-  //           kBackgroundColor.withOpacity(0),
-  //           kBackgroundColor,
-  //         ],
-  //       ),
-  //     ),
-  //     child: Padding(
-  //       padding: const EdgeInsets.only(top: 16, bottom: 48),
-  //       child: Row(
-  //         mainAxisAlignment: MainAxisAlignment.spaceAround,
-  //         crossAxisAlignment: CrossAxisAlignment.end,
-  //         children: [
-  //           for (final icon in [
-  //             FontAwesomeIcons.house,
-  //             FontAwesomeIcons.chartColumn,
-  //             FontAwesomeIcons.wallet,
-  //             FontAwesomeIcons.gear,
-  //           ])
-  //             Icon(
-  //               icon,
-  //               color: icon == FontAwesomeIcons.house
-  //                   ? kPrimaryTextColor
-  //                   : kSecondaryColor,
-  //             ),
-  //         ],
-  //       ),
-  //     ),
-  //   );
-  // }
 
   @override
   Widget build(BuildContext context) {

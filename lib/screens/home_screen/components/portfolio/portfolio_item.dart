@@ -1,4 +1,7 @@
 import 'dart:math' as math;
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -11,6 +14,16 @@ import '../currency_title.dart';
 
 class PortfolioItem extends StatelessWidget {
   final Currency currency;
+    //Future = dados futuros
+  Future<Map> _recuparPrecoBitcoin() async {
+    String url = "https://blockchain.info/ticker";
+    http.Response respostaEnderecoURL = await http.get(Uri.parse(url));
+    return json.decode(respostaEnderecoURL.body);}
+
+    
+
+
+  
 
   const PortfolioItem({
     Key? key,
@@ -49,6 +62,8 @@ class PortfolioItem extends StatelessWidget {
     );
   }
 
+
+
   Widget portfolioChart() {
     final minPrice = currency.priceHistory.reduce(math.min);
     final maxPrice = currency.priceHistory.reduce(math.max);
@@ -69,6 +84,47 @@ class PortfolioItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+return FutureBuilder<Map>(
+      future: _recuparPrecoBitcoin(),
+
+      builder: (context, snapshot){
+        //declarando variáveis
+        double _precoBitcoin = 0.0;
+        String resultadoConexaoFuture = "";
+
+        switch( snapshot.connectionState ){
+          case ConnectionState.none :
+            print("conexao none");
+            resultadoConexaoFuture = "Nenhuma Conexão";
+            break;
+
+          case ConnectionState.waiting :
+            print("conexao waiting");
+            resultadoConexaoFuture = "Carregando...";
+            break;
+
+          case ConnectionState.active :
+            print("conexao active");
+            resultadoConexaoFuture = "Ativa...";
+            break;
+
+          case ConnectionState.done :
+            print("conexao done");
+            if( snapshot.hasError ){
+              resultadoConexaoFuture = "Mal Sucedida! Erro ao carregar os dados!";
+            }
+            else {
+              _precoBitcoin = snapshot.data!["BRL"]["buy"];
+              resultadoConexaoFuture = "Bem Sucedida!";
+
+              print(_precoBitcoin);
+              print(resultadoConexaoFuture);
+              //resultadoConexaoFuture = "Preço do bitcoin: ${_precoBitcoin.toString()} ";
+            }
+            break;
+        }
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(28),
       child: Container(
@@ -104,4 +160,11 @@ class PortfolioItem extends StatelessWidget {
       ),
     );
   }
+
+  
+);
+  
+}
+
+
 }
