@@ -10,43 +10,45 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   Widget header() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'Bem vindo',
-                style: TextStyle(
-                  fontSize: 24,
-                  color: kSecondaryTextColor,
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Bem vindo',
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: kSecondaryTextColor,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 5),
-              Row(
-                children: const [
-                  CircleAvatar(
-                    foregroundImage: AssetImage('assets/images/me.jpeg'),
-                    backgroundColor: kBackgroundColor,
-                    radius: 30,
-                  ),
-                  SizedBox(width: 10),
-                  Text(
-                    'Joao Pedro',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                const SizedBox(height: 5),
+                Row(
+                  children: const [
+                    CircleAvatar(
+                      foregroundImage: AssetImage('assets/images/me.jpeg'),
+                      backgroundColor: kBackgroundColor,
+                      radius: 30,
                     ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ],
+                    SizedBox(width: 10),
+                    Text(
+                      'Joao Pedro',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -99,7 +101,7 @@ class HomeScreen extends StatelessWidget {
                 end: Alignment.bottomCenter,
                 colors: [
                   kBackgroundColor,
-                  kBackgroundColor.withOpacity(0),
+                  kBackgroundColor.withOpacity(1),
                 ],
               ).createShader(bounds),
               blendMode: BlendMode.dstATop,
@@ -109,7 +111,7 @@ class HomeScreen extends StatelessWidget {
                   header(),
                   const SizedBox(height: 36),
                   const BalanceCard(),
-                  const SizedBox(height: 36),
+                  const SizedBox(height: 45),
                   const Portfolio(),
                   const SizedBox(height: 36),
                   //const Favorites(),

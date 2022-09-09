@@ -47,14 +47,14 @@ class BalanceBackground extends StatelessWidget {
               begin: Alignment.bottomLeft,
               end: Alignment.topRight,
               colors: [
-                Color(0xFF2F3677),
-                Color(0xFF2772B7),
+                Color.fromARGB(255, 24, 129, 121),
+                Color.fromRGBO(29, 54, 68, 1),
               ],
             ),
           ),
           child: Stack(
             children: [
-              backgroundChart(),
+              //backgroundChart(),
             ],
           ),
         ),

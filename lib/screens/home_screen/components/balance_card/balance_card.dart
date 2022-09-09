@@ -17,13 +17,13 @@ class BalanceCard extends StatelessWidget {
         children: [
           const Text(
             'BTC agora',
-            style: TextStyle(fontSize: 18),
+            style: TextStyle(fontSize: 20),
           ),
-          const SizedBox(height: 4),
+          const SizedBox(height: 5),
           Text(
             NumberFormat.simpleCurrency().format(MockBalance.data.last),
             style: const TextStyle(
-              fontSize: 28,
+              fontSize: 40,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -47,13 +47,13 @@ class BalanceCard extends StatelessWidget {
 
   Widget profitPercent() {
     return Positioned(
-      right: 28,
-      bottom: 28,
+      right: 25,
+      bottom: 25,
       child: Container(
         padding: const EdgeInsets.fromLTRB(6, 6, 8, 6),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          color: kBackgroundColor.withOpacity(0.4),
+          borderRadius: BorderRadius.circular(5),
+          color: kBackgroundColor.withOpacity(1),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.end,
