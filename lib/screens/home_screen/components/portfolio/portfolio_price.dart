@@ -99,21 +99,9 @@ class _BitcoinAvancadoState extends State<BitcoinAvancado> {
                       ),
                     ),
 
-                    /*RaisedButton(
-                      color: Colors.orange,
-                      padding: EdgeInsets.fromLTRB(25, 15, 25, 15),
+                 
 
-                      child: Text("Atualizar",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          //backgroundColor: Colors.orange,
-                        )
-                      ),
-
-                      onPressed: _recuparPrecoBitcoin,
-
-                    ),*/
+                   
 
                   ],
                 ),
